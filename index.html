@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Landmarks Map</title>
     <link rel="stylesheet" href="style.css">
-    <script type="module">
-        const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-        const script = document.createElement('script');
-        script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
-        script.async = true;
-        script.defer = true;
-        document.head.appendChild(script);
-    </script>
+    <!-- Load the config.js file with the API key -->
+    <script src="config.js"></script>
+
+     
+
     <script src="script.js" defer></script>
 </head>
 <body>

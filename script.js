@@ -1,3 +1,11 @@
+// Dynamically load the Google Maps script using the API_KEY from config.js
+const script = document.createElement('script');
+script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMap`;
+script.async = true;
+script.defer = true;
+document.head.appendChild(script);
+
+
 let map;
 let currentInfoWindow = null; // Variable to track the currently open InfoWindow
 
@@ -13,7 +21,7 @@ const landmarks = [
     { name: "Hemming Village", position: { lat: 43.8146, lng: -111.7839 }, description: "A popular shopping and dining area near BYU-Idaho." },
     { name: "Beaver Dick Park", position: { lat: 43.8145, lng: -111.9467 }, description: "A scenic park along the Snake River." },
     { name: "Fat Cats Rexburg", position: { lat: 43.8109, lng: -111.7974 }, description: "Entertainment center with bowling, arcades, and movies." },
-    { name: "Adam Mongolian Grill", position: { lat: 43.8362149, lng: -111.7788867 }, descrption: "Restaurant with the Freshest food of all Rexburg" },
+    { name: "Adam Mongolian Grill", position: { lat: 43.8362149, lng: -111.7788867 }, description: "Restaurant with the Freshest food of all Rexburg" },
     { name: "Porter Park", position: { lat: 43.821955, lng: -111.791762 }, description: "Leafy green space featuring an open field, playground & spray park, plus an old carousel." },
     { name: "Kiwi Loco", position: { lat: 43.821944, lng: -111.787778 }, description: "Fun place to get frozen yogurt in the Rexburg area. Staff is funny, nice, and polite." },
     { name: "Smith Park", position: { lat: 43.8272, lng: -111.7736 }, description: "A large park with picnic areas and playgrounds." },
