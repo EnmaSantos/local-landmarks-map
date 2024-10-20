@@ -1,4 +1,4 @@
-// Dynamically load the Google Maps script using the API_KEY from config.js
+
 const script = document.createElement('script');
 script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMap`;
 script.async = true;
@@ -7,9 +7,9 @@ document.head.appendChild(script);
 
 
 let map;
-let currentInfoWindow = null; // Variable to track the currently open InfoWindow
+let currentInfoWindow = null; 
 
-// Array of local landmarks in Rexburg, Idaho with their info
+
 const landmarks = [
     { name: "Rexburg LDS Temple", position: { lat: 43.8186, lng: -111.7820 }, description: "Beautiful temple overlooking the city." },
     { name: "Brigham Young University–Idaho", position: { lat: 43.8202, lng: -111.7836 }, description: "A large private university in Rexburg." },
@@ -34,18 +34,18 @@ const landmarks = [
 
 
 
-    // Add more Rexburg landmarks here as needed...
+   
 ];
 
-// Initialize and add the map
+
 function initMap() {
-    // Map centered on Rexburg, Idaho
+   
     map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: 43.8231, lng: -111.7924 },
-        zoom: 13, // Adjust zoom level
+        zoom: 13, 
     });
 
-    // Add markers for each landmark
+    
     landmarks.forEach((landmark) => {
         const marker = new google.maps.Marker({
             position: landmark.position,
@@ -53,19 +53,19 @@ function initMap() {
             title: landmark.name,
         });
 
-        // Add an info window for each marker
+        
         const infoWindow = new google.maps.InfoWindow({
             content: `<h3>${landmark.name}</h3><p>${landmark.description}</p>`,
         });
 
-        // Show the info window on marker click
+        
         marker.addListener("click", () => {
-            // Close the currently open info window if one exists
+            
             if (currentInfoWindow) {
                 currentInfoWindow.close();
             }
 
-            // Open the new info window and update the reference
+            
             infoWindow.open(map, marker);
             currentInfoWindow = infoWindow;
         });

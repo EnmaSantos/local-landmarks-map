@@ -1,6 +1,6 @@
 # CSE 310 - Sprint Time Log
 
-**Name**: [Enmanuel De los Santos
+**Name**: Enmanuel De los Santos
 
 **Sprint #**: 2
 
